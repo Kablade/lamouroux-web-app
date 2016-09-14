@@ -18,6 +18,7 @@ use Illuminate\Routing\Controller as BaseController;
 use App\Models\ServiceItemHeader as ServiceItemHeader;
 use App\Models\ServiceItemLine as ServiceItemLine;
 use App\Models\ServiceLine as ServiceLine;
+use App\Models\Item as Item;
 use Validator;
 
 class ServiceLineController extends BaseController
@@ -49,7 +50,6 @@ class ServiceLineController extends BaseController
     $rules = [
       'type' => 'required',
       'id' => 'required',
-      'description' => 'required|max:50',
       'quantity' => 'required|numeric',
     ];
 
@@ -64,14 +64,17 @@ class ServiceLineController extends BaseController
     }
     else
     {
+      $item = Item::where('id', $request->input('id'))->first();
       $error=false;
       $messages[]='Ligne ajoutée avec succès';
       $serviceLine = new ServiceLine;
+      $serviceLine->order_no = $headerId;
+      $serviceLine->service_item_line_resource_no = $resId;
       $serviceLine->type = $request->input('type');
-      $serviceLine->id = $request->input('id');
-      $serviceLine->description = $request->input('description');
+      $serviceLine->no = $request->input('id');
+      $serviceLine->description = $item->description;
       $serviceLine->quantity = $request->input('quantity');
-      $serciveLine->save();
+      $serviceLine->save();
 
       return view('service.serviceLines',  ['header'=> $header , 'ressourceId' => $resId, 'serviceLines'=> $serviceLines])
       ->with(['error' => $error, 'messages' => $messages]);

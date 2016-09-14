@@ -54,7 +54,7 @@
             @foreach ($serviceLines as $serviceLine)
               <tr>
                 <td>{{ $serviceLine->type_str }}</td>
-                <td>{{ $serviceLine->id }}</td>
+                <td>{{ $serviceLine->no }}</td>
                 <td>{{ $serviceLine->description }}</td>
                 <td>{{ $serviceLine->quantity }}</td>
                 <td>{{ $serviceLine->unit }}</td>
@@ -64,18 +64,21 @@
               </tr>
             @endforeach
             <tr>
-              <td>
-                <select name="type" id="select-type" class="form-control">
-                  <option value=1>Article</option>
-                  <option value=2>Main d'oeuvre</option>
-                </select>
-              </td>
-              <td colspan="2"><select name="id" id="input-id" class="form-control"></select></td>
-              <td><input class="form-control" type="number" name="quantity" step="0.01"></input></td>
-              <td class="text-center"><i class="fa fa-times"></i></td>
-              <td>
-                <button class="btn btn-success btn-block"><i class="fa fa-plus"></i> Ajouter</button>
-              </td>
+              <form method='POST' action="{{ route('header::lines::post', [ 'id' => $header->order_no, 'resId' => $ressourceId]) }}">
+                <td>
+                  <select name="type" id="select-type" class="form-control">
+                    <option value=1>Article</option>
+                    <option value=2>Main d'oeuvre</option>
+                  </select>
+                </td>
+                <td colspan="2"><select name="id" id="input-id" class="form-control"></select></td>
+                <td><input class="form-control" type="number" name="quantity" step="0.01"></input></td>
+                <td class="text-center"><i class="fa fa-times"></i></td>
+                <td>
+                  <button class="btn btn-success btn-block"><i class="fa fa-plus"></i> Ajouter</button>
+                </td>
+                {{ csrf_field() }}
+              </form>
             </tr>
           </tbody>
         </table>
@@ -87,52 +90,52 @@
   @section('customJs')
     <script type="text/javascript">
 
-      var getSelect2Constructor = function () {
-        return {
-          ajax: {
-            delay: 250,
-            url: getAjaxUrl(),
-            dataType: 'json',
-            data: function (params) {
-              return {
-                description: params.term,
-                id: params.term
-              };
-            },
-            processResults: function(data, params) {
-              var dataSelect2 = [];
-
-              data.data.forEach((element, index, array) => {
-                dataSelect2.push({
-                  id: element.id,
-                  text:  element.id + ' - ' + element.description,
-                });
-              });
-
-              return {
-                results: dataSelect2,
-              }
-            },
+    var getSelect2Constructor = function () {
+      return {
+        ajax: {
+          delay: 250,
+          url: getAjaxUrl(),
+          dataType: 'json',
+          data: function (params) {
+            return {
+              description: params.term,
+              id: params.term
+            };
           },
-          cache: true,
-        };
+          processResults: function(data, params) {
+            var dataSelect2 = [];
+
+            data.data.forEach((element, index, array) => {
+              dataSelect2.push({
+                id: element.id,
+                text:  element.id + ' - ' + element.description,
+              });
+            });
+
+            return {
+              results: dataSelect2,
+            }
+          },
+        },
+        cache: true,
       };
+    };
 
-      $(document).ready(function() {
-        //-------------------
-        //Id field
-        //-------------------
-        $('#input-id').select2(getSelect2Constructor());
-      });
+    $(document).ready(function() {
+      //-------------------
+      //Id field
+      //-------------------
+      $('#input-id').select2(getSelect2Constructor());
+    });
 
-      var getAjaxUrl = function () {
-        var type = $("#select-type").val();
-        if(type==1)
-          return "{{ route('api::getItem') }}";
-      };
+    var getAjaxUrl = function () {
+      var type = $("#select-type").val();
+      if(type==1)
+      return "{{ route('api::getItem') }}";
+    };
 
-      $('#cancel').on('click', function() {
-        history.back();
-      });
+    $('#cancel').on('click', function() {
+      history.back();
+    });
     </script>
   @endsection
