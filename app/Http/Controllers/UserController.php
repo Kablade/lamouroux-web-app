@@ -145,6 +145,6 @@ class UserController extends Controller
   {
     $customer = Customer::where('name', '<>', '');
 
-    return redirect()->route('user::getCustomers')->with(['customers' => $customer]);
+    return view('user.customerList')->with(['customers' => $customer]);
   }
 }

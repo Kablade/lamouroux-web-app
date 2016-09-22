@@ -31,18 +31,20 @@
           @foreach ($customers as $customer)
             <tr>
               @if($customer->type==0)
-                <td class="information text-center"><i class="fa fa-building fa-lg"></i> <span hidden>{{ $customer->type }}<span></td>
+                <td class="primary text-center"><i class="fa fa-building fa-lg"></i> <span hidden>{{ $customer->type }}<span></td>
               @elseif($header->status==1)
                 <td class="information text-center"><i class="fa fa-user fa-lg"></i> <span hidden>{{ $customer->type }}<span></td>
               @endif
                 <td><strong>{{ $customer->id }}<strong></td>
                 <td>{{ $customer->name }}</td>
-                <td>{{ $customer->phone_no }}</td>
-                <td>{{ $customer->mobile_no}}</td>
-                <td>{{ $customer->email}}</td>
-                <td><button class="btn btn-primary btn-block" onclick="window.location = '{{ route('header::get', $header->order_no) }}';">
-                  <i class="fa fa-eye"></i> Fiche détaillée
-                </button></td>
+                <td><a href="tel:{{ $customer->phone_no }}"></a></td>
+                <td><a href="tel:{{ $customer->mobile_no}}"></a></td>
+                <td><a href="mailto:{{ $customer->email}}"></a></td>
+                <td>
+                  <button class="btn btn-primary btn-block" onclick="window.location = '{{ route('header::getCustomer', $header->order_no) }}';">
+                    <i class="fa fa-eye"></i> Fiche détaillée
+                  </button>
+                </td>
               </tr>
             </a>
           @endforeach
@@ -54,7 +56,7 @@
       @section('customJs')
         <script text="text/javascript">
         $(document).ready(function() {
-          $('#order-list').DataTable({
+          $('#contact-list').DataTable({
             "pageLength": 30,
             "language": {
               "sProcessing":     "Traitement en cours...",
