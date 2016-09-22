@@ -13,6 +13,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Customer as Customer;
 use Auth;
 use Validator;
 use Carbon\Carbon;
@@ -138,5 +139,12 @@ class UserController extends Controller
     $image->save(public_path().'/sign/'.$user->id.'.png', 70);
 
     return redirect()->route('user::signature');
+  }
+
+  public function getCustomers()
+  {
+    $customer = Customer::where('name', '<>', '');
+
+    return redirect()->route('user::getCustomers')->with(['customers' => $customer]);
   }
 }

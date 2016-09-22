@@ -9,6 +9,17 @@ class CreateCustomerTable extends Migration
     {
         Schema::create('customer', function (Blueprint $table) {
             $table->string('id')->primary();
+            $table->string('name');
+            $table->string('address');
+            $table->string('address2');
+            $table->string('city');
+            $table->string('post_code');
+            $table->string('phone');
+            $table->string('mobile');
+            $table->string('email');
+            $table->string('website');
+            $table->string('company_no');
+            $table->integer('type');
         });
     }
 

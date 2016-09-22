@@ -18,7 +18,7 @@
       <div class="panel-heading clearfix">
         <i class="fa fa-sitemap"></i> Lignes pour l'article {{ $ressourceId }}
         <div class="pull-right">
-          <button type="button" class="btn btn-default" id='cancel'><i class="fa fa-arrow-left"></i> Retour à la commande</button>
+          <a type="button" class="btn btn-default" href="{{ route('header::get', $header->order_no) }}"><i class="fa fa-arrow-left"></i> Retour à la commande</a>
           <a type="button" class="btn btn-default" href="{{ route('header::lines::fluid', ['headerId'=>$header->order_no, 'resId'=>$ressourceId]) }}">
             <i class="fa fa-tint"></i> Gérer fluides
           </a>
@@ -75,7 +75,7 @@
                 <td><input class="form-control" type="number" name="quantity" step="0.01"></input></td>
                 <td class="text-center"><i class="fa fa-times"></i></td>
                 <td>
-                  <button class="btn btn-success btn-block"><i class="fa fa-plus"></i> Ajouter</button>
+                  <button type="submit" class="btn btn-success btn-block"><i class="fa fa-plus"></i> Ajouter</button>
                 </td>
                 {{ csrf_field() }}
               </form>

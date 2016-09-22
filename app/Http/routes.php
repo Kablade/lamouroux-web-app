@@ -41,6 +41,7 @@ Route::group(['middleware' => 'custom.auth'], function () {
     Route::get('/logout', ['as' => '::logout', 'uses' => 'UserController@logout']);
     Route::get('/signature', ['as' => '::signature', 'uses' => 'UserController@signature']);
     Route::post('/signature', ['as' => '::postSignature', 'uses' => 'UserController@postSignature']);
+    Route::get('/customers', ['as' => '::getCustomers', 'uses' => 'UserController@getCustomers']);
   });
 
   Route::group(['prefix' => 'api', 'as' => 'api'], function () {

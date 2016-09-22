@@ -59,7 +59,7 @@ class ServiceLineController extends BaseController
     {
       $messages=$validator->messages();
       $error=true;
-      return view('service.serviceLines',  ['header'=> $header , 'ressourceId' => $resId, 'serviceLines'=> $serviceLines])
+      return redirect()->route('header::lines::get',  ['header'=> $header , 'ressourceId' => $resId, 'serviceLines'=> $serviceLines])
       ->with(['error' => $error, 'messages' => $messages]);
     }
     else
@@ -76,7 +76,7 @@ class ServiceLineController extends BaseController
       $serviceLine->quantity = $request->input('quantity');
       $serviceLine->save();
 
-      return view('service.serviceLines',  ['header'=> $header , 'ressourceId' => $resId, 'serviceLines'=> $serviceLines])
+      return redirect()->route('header::lines::get',  ['header'=> $header , 'ressourceId' => $resId, 'serviceLines'=> $serviceLines])
       ->with(['error' => $error, 'messages' => $messages]);
     }
   }
