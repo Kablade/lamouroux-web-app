@@ -28,35 +28,33 @@
     </div>
     <div class="panel-body">
       <div class="row">
-        <div class="col-md-4"><i class="fa fa-fw fa-user"></i><strong> Client : </strong>{{$header->customer_name}}</div>
+        <div class="col-md-4"><a href="#"><i class="fa fa-fw fa-user"></i><strong> Client : </strong>{{$header->customer_name}}</a></div>
         <div class="col-md-4"><a href="tel:{{$header->phone_no}}"><i class="fa fa-fw fa-phone"></i><strong> Téléphone : </strong>{{$header->phone_no}}</a></div>
-        <div class="col-md-4"><a href="tel:{{$header->mobile_no}}"><i class="fa fa-fw fa-mobile"></i><strong> Mobile : </strong>{{$header->mobile_no}}</a></div>
+        <div class="col-md-4"><a href="tel:{{$header->mobile_no}}"><i class="fa fa-fw fa-mobile"></i><strong> Mobile : </strong>{{$header->mobile_no}}07 51 78 32 48</a></div>
       </div>
       <div class="row">
-        <div class="col-md-4"><i class="fa fa-fw fa-user"></i><strong> Contact : </strong>{{$header->contact_name}}</div>
+        <div class="col-md-4"><a href="#"><i class="fa fa-fw fa-user"></i><strong> Contact : </strong>{{$header->contact_name}}BODIN</a></div>
         <div class="col-md-4">
           <a href="mailto:{{$header->email}}?body=">
-            <i class="fa fa-fw fa-at"></i><strong> E-mail : </strong>{{$header->email}}
+            <i class="fa fa-fw fa-at"></i><strong> E-mail : </strong>{{$header->email}}email-du-client@gmail.com
           </a>
         </div>
         <div class="col-md-4"><i class="fa fa-fw fa-fax"></i><strong> Fax : </strong>{{$header->fax_no}}</div>
       </div>
       <div class="row">
         <div class="col-md-4"><i class="fa fa-fw fa-map-marker"></i><strong> Adresse : </strong>{{$header->address}}</div>
-        <div class="col-md-4"><i class="fa fa-fw fa-comments-o"></i><strong> Commentaire : </strong>{{$header->general_comment}}</div>
-        <div class="col-md-4"><i class="fa fa-fw fa-question-circle-o"></i><strong> Type de commande : </strong></div>
+        <div class="col-md-4"><i class="fa fa-fw fa-comments-o"></i><strong> Commentaire : </strong>{{$header->general_comment}}Commentaire général.</div>
       </div>
       <div class="row">
         <div class="col-md-4"><i class="fa fa-fw fa-map-signs"></i><strong> Ville : </strong>{{$header->city}}</div>
         <div class="col-md-4"><i class="fa fa-fw fa-map-signs"></i><strong> CP : </strong>{{$header->post_code}}</div>
-        <div class="col-md-4"><i class="fa fa-fw fa-question-circle-o"></i><strong> Information visite : </strong></div>
       </div>
     </div>
   </div>
   <div class="panel panel-default boxshadow">
     <table class="table table-hover table-bordered table-striped">
       <thead>
-        <th>N° ressource</th>
+        <th>N° article de service</th>
         <th>Description</th>
         <th>Actions</th>
       </thead>

@@ -48,7 +48,7 @@
                 @elseif($header->status==1)
                   <td class="warning text-center"><i class="fa fa-clock-o fa-lg"></i> <span hidden>{{ $header->status }}<span></td>
                   @else
-                    <td class="danger text-center"><i class="fa fa-times fa-lg"> <span hidden>{{ $header->status }}<span></td>
+                    <td class="info text-center"><i class="fa fa-arrow-right fa-lg"> <span hidden>{{ $header->status }}<span></td>
                     @endif
                     <td><strong>{{ $header->order_no }}<strong></td>
                       <td>{{ $header->description }}</td>
@@ -73,13 +73,13 @@
               "language": {
                   "sProcessing":     "Traitement en cours...",
                   "sSearch":         "Rechercher&nbsp;:",
-                  "sLengthMenu":     "Afficher _MENU_ &eacute;l&eacute;ments",
-                  "sInfo":           "Affichage de l'&eacute;l&eacute;ment _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
-                  "sInfoEmpty":      "Affichage de l'&eacute;l&eacute;ment 0 &agrave; 0 sur 0 &eacute;l&eacute;ment",
-                  "sInfoFiltered":   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                  "sLengthMenu":     "Afficher _MENU_ commandes",
+                  "sInfo":           "Affichage des commandes _START_ &agrave; _END_ sur _TOTAL_",
+                  "sInfoEmpty":      "Aucune commande disponible",
+                  "sInfoFiltered":   "(filtr&eacute; de _MAX_ commandes au total)",
                   "sInfoPostFix":    "",
                   "sLoadingRecords": "Chargement en cours...",
-                  "sZeroRecords":    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+                  "sZeroRecords":    "Aucune commande ne correspond &agrave; vos critères",
                   "sEmptyTable":     "Aucune donn&eacute;e disponible dans le tableau",
                   "oPaginate": {
                     "sFirst":      "Premier",

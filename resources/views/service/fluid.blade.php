@@ -10,7 +10,7 @@
 
 @extends('layouts.layout')
 
-@section('title', 'Lignes service')
+@section('title', 'Fiche fluides')
 
   @include('layouts.navbar')
 

@@ -16,7 +16,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Customer as Customer;
 use URL;
 
-class UserController extends Controller
+class CustomerController extends Controller
 {
   protected static $dateFormat = 'd/m/Y H:i';
 

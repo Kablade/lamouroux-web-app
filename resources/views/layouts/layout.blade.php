@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="{{ URL::asset('custom/dataTables.min.css') }}" />
   <link rel="stylesheet" href="{{ URL::asset('bower/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}"/>
   <link rel="stylesheet" href="{{ URL::asset('bower/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('bower/nprogress/nprogress.css')}}" />
   <link rel="stylesheet" href="{{ URL::asset('custom/style.css') }}" />
 </head>
 <body>
@@ -34,6 +35,7 @@
   <script src="{{ URL::asset('bower/jquery/dist/jquery.min.js') }}"></script>
   <script src="{{ URL::asset('bower/bootstrap/dist/js/bootstrap.min.js') }}"></script>
   <script src="{{ URL::asset('bower/select2/dist/js/select2.min.js') }}" ></script>
+  <script src="{{ URL::asset('bower/nprogress/nprogress.js') }}" ></script>
   <script src="{{ URL::asset('custom/dataTables.min.js') }}" ></script>
   <script src="{{ URL::asset('custom/dataTablesBootstrap.min.js') }}" ></script>
   <script src="{{ URL::asset('custom/sign.min.js') }}" ></script>

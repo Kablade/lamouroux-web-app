@@ -44,8 +44,8 @@ Route::group(['middleware' => 'custom.auth'], function () {
   });
 
   Route::group(['prefix' => 'customers', 'as' => 'customer'], function () {
-    Route::get('/', ['as' => '::all', 'uses' => 'UserController@getCustomerList']);
-    Route::get('/{id}', ['as' => '::getCustomer', 'uses' => 'UserController@getCustomer']);
+    Route::get('/', ['as' => '::all', 'uses' => 'CustomerController@getCustomerList']);
+    Route::get('/{id}', ['as' => '::getCustomer', 'uses' => 'CustomerController@getCustomer']);
   });
 
   Route::group(['prefix' => 'api', 'as' => 'api'], function () {

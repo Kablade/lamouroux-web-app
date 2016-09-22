@@ -73,7 +73,7 @@
                 </td>
                 <td colspan="2"><select name="id" id="input-id" class="form-control"></select></td>
                 <td><input class="form-control" type="number" name="quantity" step="0.01"></input></td>
-                <td class="text-center"><i class="fa fa-times"></i></td>
+                <td class="text-center"><i class="fa fa-minus"></i></td>
                 <td>
                   <button type="submit" class="btn btn-success btn-block"><i class="fa fa-plus"></i> Ajouter</button>
                 </td>

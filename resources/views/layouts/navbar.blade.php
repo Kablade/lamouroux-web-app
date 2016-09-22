@@ -22,7 +22,7 @@
         <ul class="nav navbar-nav">
           <li><a href="{{ route('header::all') }}"><i class="fa fa-home"></i> Accueil</a></li>
           <li><a href="{{ route('user::getProfile') }}"><i class="fa fa-tags"></i> Articles</a></li>
-          <li><a href="{{ route('user::getCustomers') }}"><i class="fa fa-users"></i> Clients</a></li>
+          <li><a href="{{ route('customer::all') }}"><i class="fa fa-users"></i> Clients</a></li>
           <li><a href="{{ route('user::getProfile') }}"><i class="fa fa-user"></i> Profil</a></li>
           <li><a href="{{ route('user::signature') }}"><i class="fa fa-pencil"></i> Signature</a></li>
         </ul>
