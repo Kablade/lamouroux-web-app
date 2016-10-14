@@ -23,7 +23,6 @@ class CreateServiceLineTable extends Migration
       $table->string('customer_no');
       $table->string('location_code');
       $table->unique(array('order_no', 'service_item_line_resource_no'));
-      $table->foreign('order_no')->references('order_no')->on('service_item_header');
     });
   }
 

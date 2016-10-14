@@ -20,7 +20,7 @@
           <div class="panel-body">
             @if (session('error'))
               <div class="alert alert-danger" role="alert">
-                {{ session('message') }}
+              <i class="fa fa-times"></i>  {{ session('message') }}
               </div>
             @endif
             <form class="form-horizontal" action="{{ route('user::doLogin') }}" method="POST">

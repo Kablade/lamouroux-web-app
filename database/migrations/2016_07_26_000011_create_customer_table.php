@@ -17,7 +17,6 @@ class CreateCustomerTable extends Migration
             $table->string('phone');
             $table->string('mobile');
             $table->string('email');
-            $table->string('website');
             $table->string('company_no');
             $table->integer('type');
         });

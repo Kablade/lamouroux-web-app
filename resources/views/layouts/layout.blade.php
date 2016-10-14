@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="{{ URL::asset('bower/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}"/>
   <link rel="stylesheet" href="{{ URL::asset('bower/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css') }}" />
   <link rel="stylesheet" href="{{ URL::asset('bower/font-awesome-animation/dist/font-awesome-animation.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('custom/paper.min.css') }}" />
   <link rel="stylesheet" href="{{ URL::asset('custom/style.css') }}" />
 </head>
 <body>
@@ -39,6 +40,7 @@
   <script src="{{ URL::asset('custom/dataTablesBootstrap.min.js') }}" ></script>
   <script src="{{ URL::asset('custom/sign.min.js') }}" ></script>
   <script src="{{ URL::asset('bower/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
+  <script src="{{ URL::asset('bower/twbs-pagination/jquery.twbsPagination.min.js') }}" ></script>
   @yield('customJs')
 </body>
 

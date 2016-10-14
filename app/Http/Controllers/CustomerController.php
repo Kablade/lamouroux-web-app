@@ -23,7 +23,7 @@ class CustomerController extends Controller
   //On récupère la liste de tous les clients / contacts
   public function getCustomerList()
   {
-    $customers = Customer::where('name', '<>', '');
+    $customers = Customer::where('name', '<>', '')->get();
 
     return view('customer.customerList')->with(['customers' => $customers]);
   }
@@ -32,7 +32,7 @@ class CustomerController extends Controller
   public function getCustomer($id)
   {
     $customer = Customer::where('id', '=', $id)->first();
-    $contacts = Customer::where('company_no', '=', $id);
+    $contacts = Customer::where('company_no', '=', $id)->get();
 
     return view('customer.customerCard')->with(['customer' => $customer, 'contacts' => $contacts]);
   }

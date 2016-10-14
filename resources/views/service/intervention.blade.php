@@ -27,18 +27,18 @@
           @if (Session::get('error'))
             <div class="alert alert-danger" role="alert">
               @foreach (Session::get('messages')->all() as $error)
-                {{ $error }}</br>
+              <i class="fa fa-times"></i>  {{ $error }}</br>
               @endforeach
             </div>
           @else
             <div class="alert alert-success" role="alert">
               @foreach (Session::get('messages') as $message)
-                {{ $message }}</br>
+              <i class="fa fa-check"></i>  {{ $message }}</br>
               @endforeach
             </div>
           @endif
         @endif
-        
+
         @foreach($interventions as $intervention)
           <div id="intervention-{{ $intervention->id }}">
             <form method='POST' action="{{ route('header::deleteIntervention', [ 'id' => $header->order_no, 'intervId' => $intervention->id]) }}">

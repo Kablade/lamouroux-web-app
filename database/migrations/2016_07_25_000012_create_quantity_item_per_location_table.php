@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQuantityItemPerLocation extends Migration
+class CreateQuantityItemPerLocationTable extends Migration
 {
 
     public function up()
@@ -12,7 +12,7 @@ class CreateQuantityItemPerLocation extends Migration
             $table->increments('id');
             $table->string('location_code');
             $table->string('item_id');
-            $table->string('quantity');
+            $table->double('quantity');
 
             $table->unique(array('location_code', 'item_id'));
         });

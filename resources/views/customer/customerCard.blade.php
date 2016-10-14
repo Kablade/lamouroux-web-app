@@ -21,14 +21,14 @@
     <div class="panel-heading clearfix">
       <span class="panel-title">
         @if ($customer->type == 0)
-          <i class="fa fa-file-building-o"></i> Contact societé n°
+          <i class="fa fa-building-o"></i> Contact societé n°
         @else
-          <i class="fa fa-file-user"></i> Contact personne n°
+          <i class="fa fa-user"></i> Contact personne n°
         @endif
         {{$customer->id}}
       </span>
       <div class="panel-title pull-right">
-        <button type="button" class="btn btn-default" id='cancel'><i class="fa fa-arrow-left"></i> Retour à la liste</button>
+        <button type="button" class="btn btn-default" id='cancel'><i class="fa fa-arrow-left"></i> Retour</button>
       </div>
     </div>
     <div class="panel-body">
@@ -48,7 +48,6 @@
       <div class="row">
         <div class="col-md-4"><a href="tel:{{$customer->mobile}}"><i class="fa fa-fw fa-mobile"></i><strong> Mobile : </strong>{{$customer->mobile}}</a></div>
         <div class="col-md-4"><a href="mailto:{{$customer->mail}}"><i class="fa fa-fw fa-at"></i><strong> Mail : </strong>{{$customer->mail}}</a></div>
-        <div class="col-md-4"><a href="{{$customer->website}}"><i class="fa fa-fw fa-link"></i><strong> Site web: </strong>{{$customer->website}}</a></div>
       </div>
     </div>
   </div>
@@ -73,9 +72,9 @@
             @endif
               <td><strong>{{ $contact->id }}<strong></td>
               <td>{{ $contact->name }}</td>
-              <td><a href="tel:{{ $contact->phone_no }}"></a></td>
-              <td><a href="tel:{{ $contact->mobile_no}}"></a></td>
-              <td><a href="mailto:{{ $contact->email}}"></a></td>
+              <td><a href="tel:{{ $contact->phone_no }}">{{ $contact->phone }}</a></td>
+              <td><a href="tel:{{ $contact->mobile_no}}">{{ $contact->mobile}}</a></td>
+              <td><a href="mailto:{{ $contact->email}}">{{ $contact->email}}</a></td>
               <td>
                 <button class="btn btn-primary btn-block" onclick="window.location = '{{ route('customer::getCustomer', $contact->id) }}';">
                   <i class="fa fa-eye"></i> Fiche détaillée
@@ -87,7 +86,7 @@
       </tbody>
     </table>
   </div>
-  @if($lines->count()===0)
+  @if($contacts->count()===0)
     <p class="help-block">Ce contact n'a aucun contacts associés.</p>
   @endif
 @stop

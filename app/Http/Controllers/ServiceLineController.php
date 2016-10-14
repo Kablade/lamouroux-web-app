@@ -50,7 +50,7 @@ class ServiceLineController extends BaseController
     $rules = [
       'type' => 'required',
       'id' => 'required',
-      'quantity' => 'required|numeric',
+      'quantity' => 'required|text',
     ];
 
     $validator = Validator::make($request->all(), $rules);

@@ -23,10 +23,6 @@ class CreateServiceItemHeaderTable extends Migration
             $table->string('mobile_no');
             $table->string('email');
             $table->string('status');
-            $table->date('estimated_start_date');
-            $table->date('estimated_end_date');
-            $table->date('real_start_date');
-            $table->date('real_end_date');
             $table->string('fax_no');
             $table->string('order_type');
             $table->date('order_date');

@@ -28,12 +28,12 @@
     </div>
     <div class="panel-body">
       <div class="row">
-        <div class="col-md-4"><a href="#"><i class="fa fa-fw fa-user"></i><strong> Client : </strong>{{$header->customer_name}}</a></div>
+        <div class="col-md-4"><a href="{{ route('customer::getCustomer', $header->customer_no) }}"><i class="fa fa-fw fa-user"></i><strong> Client : </strong>{{$header->customer_name}}</a></div>
         <div class="col-md-4"><a href="tel:{{$header->phone_no}}"><i class="fa fa-fw fa-phone"></i><strong> Téléphone : </strong>{{$header->phone_no}}</a></div>
         <div class="col-md-4"><a href="tel:{{$header->mobile_no}}"><i class="fa fa-fw fa-mobile"></i><strong> Mobile : </strong>{{$header->mobile_no}}07 51 78 32 48</a></div>
       </div>
       <div class="row">
-        <div class="col-md-4"><a href="#"><i class="fa fa-fw fa-user"></i><strong> Contact : </strong>{{$header->contact_name}}BODIN</a></div>
+        <div class="col-md-4"><a href="{{ route('customer::getCustomer', $header->contact_no) }}"><i class="fa fa-fw fa-user"></i><strong> Contact : </strong>{{$header->contact_name}}BODIN</a></div>
         <div class="col-md-4">
           <a href="mailto:{{$header->email}}?body=">
             <i class="fa fa-fw fa-at"></i><strong> E-mail : </strong>{{$header->email}}email-du-client@gmail.com

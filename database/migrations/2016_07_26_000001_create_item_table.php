@@ -11,8 +11,6 @@ class CreateItemTable extends Migration
             $table->string('id')->primary();
             $table->string('description');
             $table->string('unit');
-            $table->string('location_code');
-            $table->float('quantity');
         });
     }
 

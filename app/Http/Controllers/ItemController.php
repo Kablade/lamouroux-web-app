@@ -32,13 +32,16 @@ class ItemController extends Controller
   public function getAll(Request $request)
   {
     $QuantityItemPerLocation = array();
-    $items = Item::all();
+    $items = Item::paginate(50);
+
     foreach ($items as $item)
     {
-      $item_per_location = QuantityItemPerLocation::where([['item_id', '=', $item->id], ['location_code', '=', Auth::user()->userdata->location_code]])->first();
-      $QuantityItemPerLocation[$item->id] = $item_per_location->quantity;
+      $item_per_location = QuantityItemPerLocation::where('item_id', '=', $item->id)->where('location_code', '=', Auth::user()->userData->location_code)->first();
+      if ($item_per_location != NULL) {
+        $QuantityItemPerLocation[$item->id] = $item_per_location->quantity;
+      }
     }
-    
-    return view('items.itemsList',  ['items'=> $items , 'QuantityItemPerLocation' => $QuantityItemPerLocation]);
+
+    return view('items.itemList',  ['items'=> $items , 'QuantityItemPerLocation' => $QuantityItemPerLocation]);
   }
 }

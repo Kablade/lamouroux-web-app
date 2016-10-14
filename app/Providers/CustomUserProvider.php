@@ -35,7 +35,7 @@ class CustomUserProvider implements UserProvider
      */
     public function retrieveByToken($identifier, $token)
     {
-        return User::where('id = ? and remember_token = ?', $identifier, $token)->first();
+        return User::where('id', '=', $identifier)->where('remember_token', $token)->first();
     }
 
     /**

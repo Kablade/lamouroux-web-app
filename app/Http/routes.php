@@ -54,6 +54,7 @@ Route::group(['middleware' => 'custom.auth'], function () {
   });
 });
 
+Route::get('/items', ['as' => 'getItems', 'uses' => 'ItemController@getAll']);
 Route::get('/users/login',  ['as' => 'user::login', 'uses' => 'UserController@login']);
 Route::post('/users/login', ['as' => 'user::doLogin', 'uses' => 'UserController@doLogin']);
 
